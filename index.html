@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,80 +18,10 @@
         #yesBtn { background: var(--accent-pink); color: white; display: inline-block !important; }
         #noBtn { background: #eee; color: #777; display: inline-block !important; }
         .gift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
-        .gift-card { background: #fff5f7; padding: 20px; border-radius: 20px; cursor: pointer; border: 2px solid transparent; }
+        .gift-card { background: #fff5f7; padding: 20px; border-radius: 20px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; }
         .gift-card:hover { border-color: var(--accent-pink); transform: translateY(-5px); }
         .full-width { grid-column: span 2; }
         .hidden { display: none !important; }
-        #modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(5px); }
-        .modal-content { background: white; padding: 30px; border-radius: 25px; width: 85%; max-width: 350px; position: relative; text-align: center; }
-        .close-btn { position: absolute; top: 10px; right: 20px; cursor: pointer; font-size: 2rem; color: #bbb; }
-    </style>
-</head>
-<body>
-    <script>
-        for (let i = 0; i < 15; i++) {
-            let heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-            document.body.appendChild(heart);
-        }
-    </script>
-
-    <div class="container" id="screen1">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYyYm94bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/cLS1cfxvGOPVpf9g3y/giphy.gif" width="130">
-        <h1>Hi Хулан!</h1>
-        <p>Шижир has a question for you...<br><b>Will you be my Valentine?</b></p>
-        <div class="btn-group">
-            <button id="yesBtn" onclick="showGifts()">Yes!</button>
-            <button id="noBtn" onmouseover="moveNo()" onclick="moveNo()">No</button>
-        </div>
-    </div>
-
-    <div class="container hidden" id="screen2">
-        <h1>Yay! ❤️</h1>
-        <div class="gift-grid">
-            <div class="gift-card" onclick="openModal('letter')">📩<br>Letter</div>
-            <div class="gift-card" onclick="openModal('reasons')">✨<br>Reasons</div>
-            <div class="gift-card full-width" onclick="openModal('music')">🎵<br>Our Song</div>
-        </div>
-    </div>
-
-    <div id="modal" class="hidden">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">×</span>
-            <div id="modal-text"></div>
-        </div>
-    </div>
-
-    <script>
-        function moveNo() {
-            const btn = document.getElementById('noBtn');
-            btn.style.position = 'fixed';
-            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
-            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
-            btn.style.left = x + 'px';
-            btn.style.top = y + 'px';
-        }
-        function showGifts() {
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-            document.getElementById('screen1').classList.add('hidden');
-            document.getElementById('screen2').classList.remove('hidden');
-        }
-        function openModal(type) {
-            const modal = document.getElementById('modal');
-            const content = document.getElementById('modal-text');
-            modal.classList.remove('hidden');
-            if(type === 'letter') {
-                content.innerHTML = `<h3>To Хулан,</h3><p>Buh zuild uuchlaarai mny buruu hairtaishu ❤️</p><p>- Шижир</p>`;
-            } else if(type === 'reasons') {
-                content.innerHTML = `<h3>Why I Love You</h3><ul style="text-align:left"><li>Mny az jargl</li><li>Mny buh zuil</li><li>The way you make every day better just by being you ✨</li></ul>`;
-            } else if(type === 'music') {
-                content.innerHTML = `<h3>Our Song</h3><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1u2D6m4E9nIxl2yD20uQfB" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
-            }
-        }
-        function closeModal() { document.getElementById('modal').classList.add('hidden'); }
-    </script>
-</body>
-</html>
+        #modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(8px); }
+        .modal-content { background: white; padding: 25px; border-radius: 25px; width: 90%; max-width: 350px; position: relative; text-align: center; }
+        .close-btn { position: absolute; top: 10px; right: 20px; cursor: pointer; font-size: 2rem; color
