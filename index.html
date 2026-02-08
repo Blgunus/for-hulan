@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,15 +8,15 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
         :root { --accent-pink: #ff4d6d; }
-        body { background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%); font-family: 'Poppins', sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+        body { background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%); font-family: 'Poppins', sans-serif; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow-x: hidden; }
         .heart { position: absolute; color: rgba(255, 77, 109, 0.3); font-size: 20px; animation: float 6s infinite linear; z-index: 1; }
         @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); opacity: 1; } 100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; } }
-        .container { background: white; width: 85%; max-width: 400px; padding: 40px 20px; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); text-align: center; position: relative; z-index: 10; }
+        .container { background: white; width: 85%; max-width: 400px; padding: 40px 20px; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); text-align: center; position: relative; z-index: 10; margin: 20px; }
         h1 { color: var(--accent-pink); font-family: 'Dancing Script', cursive; font-size: 2.8rem; margin: 10px 0; }
-        .btn-group { margin-top: 30px; display: flex; justify-content: center; gap: 20px; min-height: 60px; position: relative; z-index: 100; }
+        .btn-group { margin-top: 30px; display: flex; justify-content: center; gap: 20px; width: 100%; position: relative; z-index: 100; }
         button { padding: 12px 35px; font-size: 1.1rem; font-weight: 600; border-radius: 50px; border: none; cursor: pointer; transition: 0.3s; position: relative; }
-        #yesBtn { background: var(--accent-pink); color: white; display: inline-block !important; visibility: visible !important; }
-        #noBtn { background: #eee; color: #777; display: inline-block !important; visibility: visible !important; }
+        #yesBtn { background: var(--accent-pink); color: white; display: inline-block !important; }
+        #noBtn { background: #eee; color: #777; display: inline-block !important; }
         .gift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
         .gift-card { background: #fff5f7; padding: 20px; border-radius: 20px; cursor: pointer; border: 2px solid transparent; }
         .gift-card:hover { border-color: var(--accent-pink); transform: translateY(-5px); }
@@ -88,7 +88,7 @@
             } else if(type === 'reasons') {
                 content.innerHTML = `<h3>Why I Love You</h3><ul style="text-align:left"><li>Mny az jargl</li><li>Mny buh zuil</li><li>The way you make every day better just by being you ✨</li></ul>`;
             } else if(type === 'music') {
-                content.innerHTML = `<h3>Our Song</h3><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1dGrvS9unqRMvASZWM986f" width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+                content.innerHTML = `<h3>Our Song</h3><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1u2D6m4E9nIxl2yD20uQfB" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
             }
         }
         function closeModal() { document.getElementById('modal').classList.add('hidden'); }
